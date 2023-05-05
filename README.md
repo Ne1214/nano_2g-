@@ -1,5 +1,7 @@
-＃ 燒錄.img檔
-
+# 影像輸出
+ 
+ 燒錄.img檔
+ 
 2g:https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-2gb-devkit#write
 4g:https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#write
 
@@ -18,3 +20,4 @@ sudo apt upgrade -y
 sudo apt install cheese
 cheese
 ```
+
