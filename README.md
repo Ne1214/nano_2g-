@@ -41,7 +41,7 @@ update-alternatives --install /usr/bin/python python /usr/bin/python3.6 1
 update-alternatives --install /usr/bin/python python /usr/bin/python3.10 2
 sudo update-alternatives --config python
 ```
-這裡我都是默認python3的版本python3.6所以砍你有沒有需要裝
+這裡我都是默認python3的版本python3.6所以看你有沒有需要裝
 
 ```ccs
 sudo apt install python3-pip
@@ -63,6 +63,7 @@ dpkg -l | grep cuda
 ```
 
 我是參考這篇去做的:https://chiachun0818.medium.com/jetson-nano-%E9%87%8D%E6%96%B0%E7%B7%A8%E8%AD%AF-opencv-cuda-a65daf5988ab
+
 那我這裡還是附上指令
 ```ccs
 sudo -H pip install -U jetson-stats
