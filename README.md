@@ -19,6 +19,7 @@ sudo apt upgrade -y
 ```ccs
 sudo apt install cheese
 cheese
+#webcam
 ```
 
 接下來要載python版本(可載可不載)
@@ -31,6 +32,7 @@ Press [ENTER] to continue or Ctrl-c to cancel adding it.  (按 Enter 鍵)
 
 ```ccs
 sudo apt update
+#這裡我都是默認python3的版本python3.6所以看你有沒有需要裝
 sudo apt install python3.10 -y
 python3.10 --version
 sudo apt install python3-pip
@@ -42,7 +44,6 @@ update-alternatives --install /usr/bin/python python /usr/bin/python3.6 1
 update-alternatives --install /usr/bin/python python /usr/bin/python3.10 2
 sudo update-alternatives --config python
 ```
-這裡我都是默認python3的版本python3.6所以看你有沒有需要裝
 
 ```ccs
 sudo apt install vim
