@@ -34,7 +34,10 @@ sudo apt update
 sudo apt install python3.10 -y
 python3.10 --version
 ```
-
+```ccs
+sudo apt install python3-pip
+```
+載入pip
 ```ccs
 update-alternatives --list python
 update-alternatives --install /usr/bin/python python /usr/bin/python3.6 1
@@ -43,10 +46,6 @@ sudo update-alternatives --config python
 ```
 這裡我都是默認python3的版本python3.6所以看你有沒有需要裝
 
-```ccs
-sudo apt install python3-pip
-```
-載入pip
 ```ccs
 sudo apt install vim
 ```
@@ -92,9 +91,9 @@ sudo reboot
  
  ```ccs
  # reveal the CUDA location
-sudo sh -c “echo ‘/usr/local/cuda/lib64’ >> /etc/ld.so.conf.d/nvidia-tegra.conf” -y
+ sudo sh -c “echo ‘/usr/local/cuda/lib64’ >> /etc/ld.so.conf.d/nvidia-tegra.conf” -y
  sudo ldconfig -y
-# third-party libraries
+ # third-party libraries
  sudo apt-get install build-essential cmake git unzip pkg-config -y
  sudo apt-get install libjpeg-dev libpng-dev libtiff-dev -y
  sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev -y
@@ -124,7 +123,7 @@ sudo sh -c “echo ‘/usr/local/cuda/lib64’ >> /etc/ld.so.conf.d/nvidia-tegra
  unzip opencv.zip && unzip opencv_contrib.zip
  mv opencv-4.7.0 opencv
  mv opencv_contrib-4.7.0 opencv_contrib
-# clean up the zip files
+ # clean up the zip files
  rm opencv.zip && rm opencv_contrib.zip
  cd ~/opencv
  mkdir build && cd build
@@ -175,7 +174,7 @@ make -j4
  sudo rm -r /usr/include/opencv4/opencv2
  sudo make install
  sudo ldconfig
-# cleaning (frees 300 MB)
+ # cleaning (frees 300 MB)
  make clean
  sudo apt-get update
  sudo rm -rf ~/opencv
