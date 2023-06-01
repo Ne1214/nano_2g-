@@ -48,7 +48,7 @@ sudo apt install python3-pip
 ```
 載入pip
 ```ccs
-sudo gedit ~./bashrc
+sudo gedit ~/.bashrc
 ```
 在最後加入這兩行
 
@@ -57,7 +57,7 @@ export PATH=/usr/local/cuda/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 ```
 ```ccs
-source ~./bashrc
+source ~/.bashrc
 nvcc --version
 dpkg -l | grep cuda
 ```
