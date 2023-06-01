@@ -90,7 +90,7 @@ sudo reboot
  
  ```ccs
  # reveal the CUDA location
- sudo sh -c "echo '/usr/local/cuda/lib64' >> /etc/ld.so.conf.d/nvidia-tegra.conf" -y
+ sudo sh -c "echo '/usr/local/cuda/lib64' >> /etc/ld.so.conf.d/nvidia-tegra.conf"
  sudo ldconfig -y
  # third-party libraries
  sudo apt-get install build-essential cmake git unzip pkg-config -y
