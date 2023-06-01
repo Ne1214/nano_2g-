@@ -48,7 +48,11 @@ sudo apt install python3-pip
 ```
 載入pip
 ```ccs
-sudo gedit ~/.bashrc
+sudo apt install vim
+```
+載入
+```ccs
+sudo vim ~/.bashrc
 ```
 在最後加入這兩行
 
@@ -88,25 +92,25 @@ sudo reboot
  
  ```ccs
  # reveal the CUDA location
-$ sudo sh -c “echo ‘/usr/local/cuda/lib64’ >> /etc/ld.so.conf.d/nvidia-tegra.conf” -y
-$ sudo ldconfig -y
+sudo sh -c “echo ‘/usr/local/cuda/lib64’ >> /etc/ld.so.conf.d/nvidia-tegra.conf” -y
+ sudo ldconfig -y
 # third-party libraries
-$ sudo apt-get install build-essential cmake git unzip pkg-config -y
-$ sudo apt-get install libjpeg-dev libpng-dev libtiff-dev -y
-$ sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev -y
-$ sudo apt-get install libgtk2.0-dev libcanberra-gtk* -y
-$ sudo apt-get install python3-dev python3-numpy python3-pip -y
-$ sudo apt-get install libxvidcore-dev libx264-dev libgtk-3-dev -y
-$ sudo apt-get install libtbb2 libtbb-dev libdc1394–22-dev -y
-$ sudo apt-get install gstreamer1.0-tools libv4l-dev v4l-utils -y
-$ sudo apt-get install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev -y
-$ sudo apt-get install libavresample-dev libvorbis-dev libxine2-dev -y
-$ sudo apt-get install libfaac-dev libmp3lame-dev libtheora-dev -y
-$ sudo apt-get install libopencore-amrnb-dev libopencore-amrwb-dev -y
-$ sudo apt-get install libopenblas-dev libatlas-base-dev libblas-dev -y
-$ sudo apt-get install liblapack-dev libeigen3-dev gfortran -y
-$ sudo apt-get install libhdf5-dev protobuf-compiler -y
-$ sudo apt-get install libprotobuf-dev libgoogle-glog-dev libgflags-dev -y
+ sudo apt-get install build-essential cmake git unzip pkg-config -y
+ sudo apt-get install libjpeg-dev libpng-dev libtiff-dev -y
+ sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev -y
+ sudo apt-get install libgtk2.0-dev libcanberra-gtk* -y
+ sudo apt-get install python3-dev python3-numpy python3-pip -y
+ sudo apt-get install libxvidcore-dev libx264-dev libgtk-3-dev -y
+ sudo apt-get install libtbb2 libtbb-dev libdc1394–22-dev -y
+ sudo apt-get install gstreamer1.0-tools libv4l-dev v4l-utils -y
+ sudo apt-get install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev -y
+ sudo apt-get install libavresample-dev libvorbis-dev libxine2-dev -y
+ sudo apt-get install libfaac-dev libmp3lame-dev libtheora-dev -y
+ sudo apt-get install libopencore-amrnb-dev libopencore-amrwb-dev -y
+ sudo apt-get install libopenblas-dev libatlas-base-dev libblas-dev -y
+ sudo apt-get install liblapack-dev libeigen3-dev gfortran -y
+ sudo apt-get install libhdf5-dev protobuf-compiler -y
+ sudo apt-get install libprotobuf-dev libgoogle-glog-dev libgflags-dev -y
 ```
 
 安裝相依套件
@@ -114,20 +118,20 @@ $ sudo apt-get install libprotobuf-dev libgoogle-glog-dev libgflags-dev -y
 開始裝opencv
 
 ```ccs
-$ cd ~
-$ wget -O opencv.zip https://github.com/opencv/opencv/archive/4.7.0.zip
-$ wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.7.0.zip
-$ unzip opencv.zip && unzip opencv_contrib.zip
-$ mv opencv-4.7.0 opencv
-$ mv opencv_contrib-4.7.0 opencv_contrib
+ cd ~
+ wget -O opencv.zip https://github.com/opencv/opencv/archive/4.7.0.zip
+ wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.7.0.zip
+ unzip opencv.zip && unzip opencv_contrib.zip
+ mv opencv-4.7.0 opencv
+ mv opencv_contrib-4.7.0 opencv_contrib
 # clean up the zip files
-$ rm opencv.zip && rm opencv_contrib.zip
-$ cd ~/opencv
-$ mkdir build && cd build
+ rm opencv.zip && rm opencv_contrib.zip
+ cd ~/opencv
+ mkdir build && cd build
 ```
 
 ```ccs
-$ cmake -D CMAKE_BUILD_TYPE=RELEASE \
+ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 -D CMAKE_INSTALL_PREFIX=/usr \
 -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules \
 -D EIGEN_INCLUDE_PATH=/usr/include/eigen3 \
@@ -168,20 +172,20 @@ make -j4
 ```
 
 ```ccs
-$ sudo rm -r /usr/include/opencv4/opencv2
-$ sudo make install
-$ sudo ldconfig
+ sudo rm -r /usr/include/opencv4/opencv2
+ sudo make install
+ sudo ldconfig
 # cleaning (frees 300 MB)
-$ make clean
-$ sudo apt-get update
-$ sudo rm -rf ~/opencv
-$ sudo rm -rf ~/opencv_contrib
+ make clean
+ sudo apt-get update
+ sudo rm -rf ~/opencv
+ sudo rm -rf ~/opencv_contrib
 ```
 
 檢查opencv
 
 ```ccs
-$ jetson_release
+ jetson_release
 ```
 出來cuda後應該要是:YES
 
