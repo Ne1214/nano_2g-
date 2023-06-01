@@ -33,8 +33,6 @@ Press [ENTER] to continue or Ctrl-c to cancel adding it.  (按 Enter 鍵)
 sudo apt update
 sudo apt install python3.10 -y
 python3.10 --version
-```
-```ccs
 sudo apt install python3-pip
 ```
 載入pip
